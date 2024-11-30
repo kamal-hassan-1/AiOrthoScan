@@ -1,0 +1,53 @@
+//LOGIN PAGE
+api/auth/login{
+    <POST> json{
+        email: ""
+        password: ""
+    }
+        response: 200
+        sessionToken: "asjdjsahdaskhdlashklsa"
+        errorResponse: 404
+}
+//SIGNUP PAGE
+api/auth/signUp{
+    <POST> json{
+        fullName: ""
+        cnic: ""
+        email: ""
+        psw: ""
+    }
+        response: 200
+        errorResponse: 404
+}
+
+
+
+//DASHBOARD
+api/main/dashboard{
+        //request to get statistics(scans, pending scans, success rate, daysSinceLastScan)
+        <GET>
+            response: 200
+            errorResponse: 404
+}
+//PaTIENT DETAIL (M0)
+    api/main/patientDetails
+        //request to get patientDetails(first name, age, gender, IDNumber, disease, complexity status, confidence score, days in rehabilation, medicalSCan)
+        <GET>
+            response: 200
+            errorResponse: 404
+
+
+
+
+//Diagnose ()
+api/main/Diagnose
+    <POST>{
+        .png / .jpg
+    }
+        response: "asks for gender and age, upload Status and image and gets AIDiagnosis"
+        error: 404
+
+
+
+
+        
