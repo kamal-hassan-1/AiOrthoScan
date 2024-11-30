@@ -6,12 +6,15 @@ import Diagnose from "../DiagnosisComponents/Mdiagnosis"
 
 import {useLocation } from 'react-router-dom';
 
+// max-800:px-[20px]
+// max-1200:pl-[90px]
+
 const RightDash = ({toggleLeft}) => {
 
   const location = useLocation();
 
   return (
-    <div className="pl-[50px] w-[85%] min-h-screen bg-background-blue max-1200:w-[100%] max-1200:pl-[90px] max-800:px-[20px] pb-[30px]">
+    <div className="w-[85%] min-h-screen bg-background-blue pb-[30px] max-1200:w-[100%] overflow-y-auto z-10">
       <Header toggleLeft={toggleLeft}/>
       {location.pathname === "/Dashboard"  && (
           <MainDashboard/>

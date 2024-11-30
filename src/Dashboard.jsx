@@ -15,7 +15,7 @@ function Dashboard() {
 
   return (
     <div>
-      <div className='w-[100vw] min-h-screen text-white flex'>
+      <div className='w-[100vw] min-h-screen relative text-white flex justify-end'>
         {location.pathname === "/Dashboard" && (
           <LeftDash isVisible={LeftVisible} toggleLeft={toggleLeftPosition} />
         )}

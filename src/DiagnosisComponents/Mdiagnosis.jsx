@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import Elbow from "./Elbow.jpg"
 import Loading from "./Loading.png"
-import Attach from "../svg/attach.svg"
+// import Attach from "../svg/attach.svg"
+import UploadButton from "./UploadButton"
 
-const Mdiagnosis = () => {
 
-  const showAlert1 = () => {
-    alert('Attach button clicked! File upload functionality goes here.');
+const Mdiagnosis = ({Upload}) => {
+
+  const [inputValue, setInputValue] = useState('');
+
+  const handleUpload = () => {
+    if (inputValue.trim() === '') {
+      // If input is empty, show alert to enter data
+      alert('Please enter data before uploading!');
+    } else {
+      // If there is data, show success alert
+      alert('Yes, image uploaded!');
+    }
   };
 
   const showAlert2 = () => {
@@ -36,21 +46,19 @@ const Mdiagnosis = () => {
   
 
   return (
-    <div class="pr-[50px] flex flex-col pt-[20px] gap-[30px] max-1200:pr-[90px] max-800:px-[0px]">
+    <div class="px-[50px] flex flex-col items-center gap-[30px] max-1200:px-[90px] max-800:px-[20px]">
 
       <div className='w-[100%] h-[100px] bg-gray-300 px-[20px] flex gap-[20px] justify-between items-center rounded-[10px] 
         max-1200:h-[80px] max-800:h-[75px] max-750:h-[65px] max-650:h-[55px] max-480:h-[45px] max-480:px-[10px] max-480:gap-[10px]'>
-
-             <button class="w-[100px] h-[40px] bg-gray-100 border-[2px] rounded-[5px] text-[18px] text-black font-[600] 
-             font-sans flex justify-center items-center max-800:h-[35px] max-650:h-[25px] max-650:text-[16px] max-480:w-[90px]" onClick={showAlert1}>
-             <img src={Attach} alt="" className="w-[20px] max-650:w-[15px]" />
-              Attach
-              </button>
-
-
-        <input type="text" placeholder={placeholder}
+              <UploadButton Upload={handleUpload}/>
+              <input 
+        type="text" 
+        placeholder={placeholder}
         className="input-diagnosis w-[90%] h-[40px] bg-background-blue rounded-[5px] outline-none px-[10px] text-[18px] 
-        max-800:h-[35px] max-650:h-[25px] max-650:text-[16px]"/>
+        max-800:h-[35px] max-650:h-[25px] max-650:text-[16px]"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)} 
+      />
 
       </div>
 

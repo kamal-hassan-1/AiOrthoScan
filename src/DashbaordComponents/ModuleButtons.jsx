@@ -4,7 +4,7 @@ import Bone from "../img/bone.png"
 
 const Module_Buttons = () => {
   return (
-    <div className="w-[70%] py-[30px] flex gap-[100px] max-800:w-[70%] max-800:gap-[0px] max-800:justify-between max-650:w-[90%]">
+    <div className="w-[70%] py-[30px] flex justify-center gap-[100px] max-800:w-[70%] max-800:gap-[30px] max-650:w-[90%]">
       
       <Link to="/PatientRecord" className="moduleBox">
             <div className="w-[100px] h-[100px] rounded-full bg-gray-400 flex items-center justify-center border-[3px] border-border-blue 
@@ -23,8 +23,7 @@ const Module_Buttons = () => {
            </div>
 
            <div className='w-[100%] flex flex-col items-center'>
-              <div className="text-[24px] max-820:text-[18px] max-520:text-[12px] max-400:text-[10px]">Diagnostic Decision</div>
-              <div className="text-[24px] max-820:text-[18px] max-520:text-[12px] max-400:text-[10px]">Support System</div>
+              <div className="text-[24px] max-820:text-[18px] max-520:text-[12px] max-400:text-[10px]">Treatment</div>
            </div>
       </Link>
 
